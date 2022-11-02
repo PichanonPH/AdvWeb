@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { FlavourService } from 'src/app/services/flavour.service';
 @Component({
@@ -24,9 +24,9 @@ export class AddflavourComponent implements OnInit {
   }
 
   addFlavour(){
-    this.FVservice.addProduct(this.flavourForm.value).subscribe({
+    this.FVservice.addFlavour(this.flavourForm.value).subscribe({
       next: data => {
-        alert('Product added successfully');
+        alert('Flavour added succesfully');
         this.flavourForm.reset();
       },
       error: err => {

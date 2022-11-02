@@ -1,0 +1,473 @@
+<!-- 1.flavour -->
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Flavour</h4>
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-12">
+                        <form [formGroup]="flavourForm">
+                            <div class="card">
+                                <div class="card-header">
+                                    Flavour Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour ID:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='flavour_id'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Name:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='name'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Price:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='price'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Detail:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='detail'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Image:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="file" class="form-control-file" formControlName='file' (change)="Flavour_onChangeImg($event)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.flavourForm.value.image" style="height:150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" (click)="addFlavour()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger" (click)="Flavour_resetForm()">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 2.topping -->
+    <div class="col-sm-6">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Topping</h4>
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-12">
+                        <form [formGroup]="toppingForm">
+                            <div class="card">
+                                <div class="card-header">
+                                    Flavour Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour ID:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='topping_id'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Name:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='name'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Price:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='price'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Detail:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='detail'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Image:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="file" class="form-control-file" formControlName='file' (change)="Topping_onChangeImg($event)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.toppingForm.value.image" style="height:150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" (click)="addTopping()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger" (click)="Topping_resetForm()">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 3.container -->
+
+<div class="row">
+    <div class="col-sm-6">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Container</h4>
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-12">
+                        <form [formGroup]="containerForm">
+                            <div class="card">
+                                <div class="card-header">
+                                    Flavour Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour ID:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='container_id'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Name:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='name'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Price:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='price'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Detail:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='detail'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Image:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="file" class="form-control-file" formControlName='file' (change)="Container_onChangeImg($event)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.containerForm.value.image" style="height:150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" (click)="addContainer()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger" (click)="Container_resetForm()">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 4.sauce -->
+    <div class="col-sm-6">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Sauce</h4>
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-12">
+                        <form [formGroup]="sauceForm">
+                            <div class="card">
+                                <div class="card-header">
+                                    Flavour Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour ID:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='sauce_id'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Name:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='name'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Price:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='price'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Detail:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='detail'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Image:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="file" class="form-control-file" formControlName='file' (change)="Sauce_onChangeImg($event)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.sauceForm.value.image" style="height:150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" (click)="addSauce()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger" (click)="Sauce_resetForm()">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 5.set -->
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Set</h4>
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-8">
+                        <form [formGroup]="setForm">
+                            <div class="card">
+                                <div class="card-header">
+                                    Flavour Form
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour ID:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='set_id'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Name:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='name'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Price:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="number" class="form-control" formControlName='price'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Flavour Detail:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="text" class="form-control" formControlName='detail'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Image:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                            <input type="file" class="form-control-file" formControlName='file' (change)="Set_onChangeImg($event)">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-9">
+                                            <img *ngIf="previewLoaded" class="img-thumbnail" [src]="this.setForm.value.image" style="height:150px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary" (click)="addSet()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger" (click)="Set_resetForm()">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

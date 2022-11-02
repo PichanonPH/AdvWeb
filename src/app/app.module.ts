@@ -12,6 +12,11 @@ import { ThirdComponent } from './components/third/third.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AddflavourComponent } from './components/addflavour/addflavour.component';
+import { UpdatemenuComponent } from './components/updatemenu/updatemenu.component';
+import { Menu2orderComponent } from './components/menu2order/menu2order.component';
+import { OrderComponent } from './components/order/order.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { SaleshistoryComponent } from './components/saleshistory/saleshistory.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { AddflavourComponent } from './components/addflavour/addflavour.componen
     ThirdComponent,
     CartComponent,
     MenuComponent,
-    AddflavourComponent
+    AddflavourComponent,
+    UpdatemenuComponent,
+    Menu2orderComponent,
+    OrderComponent,
+    PaymentComponent,
+    SaleshistoryComponent
   ],
   imports: [
     BrowserModule,

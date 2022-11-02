@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   cart!:productsModel
+  
   constructor(private cartS:CartService) { 
     this.cart = this.cartS.getcart()
   }
